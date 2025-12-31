@@ -8,3 +8,4 @@ Flask-Session
 Werkzeug
 SQLAlchemy
 pytest
+requests
