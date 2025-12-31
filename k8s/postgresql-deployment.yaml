@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgresql
+  name: portfolio-service-db
   labels:
-    app: postgresql
+    app: portfolio-service-db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgresql
+      app: portfolio-service-db
   template:
     metadata:
       labels:
-        app: postgresql
+        app: portfolio-service-db
     spec:
       containers:
       - name: postgresql
