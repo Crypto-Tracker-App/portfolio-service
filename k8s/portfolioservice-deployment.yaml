@@ -18,6 +18,11 @@ spec:
       - name: wait-for-db
         image: postgres:13-alpine
         env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: portfolioservice-config
+              key: DB_HOST
         - name: POSTGRES_USER
           valueFrom:
             configMapKeyRef:
@@ -33,7 +38,7 @@ spec:
             secretKeyRef:
               name: portfolioservice-secret
               key: POSTGRES_PASSWORD
-        command: ['sh', '-c', 'until pg_isready -h postgresql -p 5432; do echo waiting for db; sleep 2; done']
+        command: ['sh', '-c', 'until pg_isready -h $DB_HOST -p 5432; do echo waiting for db; sleep 2; done']
       containers:
       - name: portfolio-service
         image: cryptotracker.azurecr.io/portfolio-service:latest
