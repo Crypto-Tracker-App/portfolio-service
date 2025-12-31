@@ -222,7 +222,7 @@ portfolio-service/
 | LOG_REQUEST_COMPLETION | Request logging mode           | No       | errors       |
 
 ### Azure-Specific Configuration
-Sensitive data should be managed via Azure Key Vault or Kubernetes Secrets. Non-sensitive configuration can be managed via Kubernetes ConfigMaps.
+Sensitive data should be managed via Azure Key Vault or Kubernetes Secrets. Non-sensitive configuration can be managed via Kubernetes ConfigMaps..
 
 **Example Kubernetes Secret:**
 ```yaml
