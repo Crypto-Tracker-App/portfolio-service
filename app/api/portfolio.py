@@ -17,7 +17,7 @@ def get_current_user_from_user_service():
         if resp.status_code == 200:
             return resp.json().get('user')
     except Exception as e:
-        # Optionally log error here if needed
+        # Optionally log error here if needed.
         pass
     return None
 
